@@ -1,10 +1,10 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:smart_home/view/login.dart';
+import 'package:smart_home/view/home.dart';
 import 'package:smart_home/viewmodel/smart_home.dart';
 
-void main() async{
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   runApp(const MyApp());
@@ -24,11 +24,11 @@ class _MyAppState extends State<MyApp> {
       providers: [
         ChangeNotifierProvider.value(value: SmartHome()),
       ],
-      builder: (context, child){
+      builder: (context, child) {
         return const MaterialApp(
           debugShowCheckedModeBanner: false,
           title: "Smart Home App",
-          home: Login(),
+          home: Home(),
         );
       },
     );

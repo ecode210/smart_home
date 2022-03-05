@@ -16,7 +16,7 @@ class Dashboard extends StatefulWidget {
   _DashboardState createState() => _DashboardState();
 }
 
-class _DashboardState extends State<Dashboard> with SingleTickerProviderStateMixin{
+class _DashboardState extends State<Dashboard> with SingleTickerProviderStateMixin {
   late TabController _tabController;
 
   @override
@@ -25,6 +25,7 @@ class _DashboardState extends State<Dashboard> with SingleTickerProviderStateMix
     setState(() {});
     super.initState();
   }
+
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
@@ -47,7 +48,7 @@ class _DashboardState extends State<Dashboard> with SingleTickerProviderStateMix
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      "Hello ${widget.user.displayName!.toString().split(" ")[0]}",
+                      "Hello Olawole",
                       style: GoogleFonts.quicksand(
                         textStyle: TextStyle(
                           color: Colors.grey.shade900,
@@ -72,17 +73,6 @@ class _DashboardState extends State<Dashboard> with SingleTickerProviderStateMix
                 CircleAvatar(
                   backgroundColor: Colors.cyan,
                   radius: 25,
-                  child: Container(
-                    height: 50,
-                    width: 50,
-                    alignment: Alignment.center,
-                    child: CircleAvatar(
-                      backgroundImage: NetworkImage(
-                        widget.user.photoURL!,
-                      ),
-                      radius: 22,
-                    ),
-                  ),
                 ),
               ],
             ),
@@ -91,8 +81,7 @@ class _DashboardState extends State<Dashboard> with SingleTickerProviderStateMix
           Container(
             width: size.width,
             height: 120,
-            padding:
-            const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+            padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(10),
@@ -164,8 +153,7 @@ class _DashboardState extends State<Dashboard> with SingleTickerProviderStateMix
                       onTap: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(
-                              builder: (context) => const Temperature()),
+                          MaterialPageRoute(builder: (context) => const Temperature()),
                         );
                       },
                       child: Container(
@@ -180,10 +168,10 @@ class _DashboardState extends State<Dashboard> with SingleTickerProviderStateMix
                           "Check",
                           style: GoogleFonts.quicksand(
                               textStyle: const TextStyle(
-                                color: Colors.white,
-                                fontSize: 13,
-                                fontWeight: FontWeight.w600,
-                              )),
+                            color: Colors.white,
+                            fontSize: 13,
+                            fontWeight: FontWeight.w600,
+                          )),
                         ),
                       ),
                     )
@@ -196,8 +184,7 @@ class _DashboardState extends State<Dashboard> with SingleTickerProviderStateMix
           Container(
             width: size.width,
             height: 100,
-            padding:
-            const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+            padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
             decoration: BoxDecoration(
               color: Colors.cyan,
               borderRadius: BorderRadius.circular(10),
@@ -246,18 +233,17 @@ class _DashboardState extends State<Dashboard> with SingleTickerProviderStateMix
                   "27.5℃",
                   style: GoogleFonts.quicksand(
                       textStyle: const TextStyle(
-                        color: Colors.white,
-                        fontSize: 20,
-                        fontWeight: FontWeight.w800,
-                      )),
+                    color: Colors.white,
+                    fontSize: 20,
+                    fontWeight: FontWeight.w800,
+                  )),
                 )
               ],
             ),
           ),
           const SizedBox(height: 10),
           Padding(
-            padding:
-            const EdgeInsets.symmetric(vertical: 10, horizontal: 5),
+            padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 5),
             child: TabBar(
               controller: _tabController,
               unselectedLabelColor: Colors.cyan,

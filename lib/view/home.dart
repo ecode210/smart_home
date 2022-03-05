@@ -19,7 +19,7 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
   final PageController _pageController = PageController(initialPage: 0);
-  final user = FirebaseAuth.instance.currentUser!;
+  User? user = FirebaseAuth.instance.currentUser!;
   stt.SpeechToText speech = stt.SpeechToText();
   bool isListening = false;
   String lastWords = '';
@@ -134,8 +134,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
           currentIndex: Provider.of<SmartHome>(context).selectedTab,
           onTap: (int index) {
             setState(() {
-              Provider.of<SmartHome>(context, listen: false).selectedTab =
-                  index;
+              Provider.of<SmartHome>(context, listen: false).selectedTab = index;
             });
           },
           backgroundColor: Colors.white,
@@ -154,8 +153,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                     curve: Curves.easeInOut,
                   );
                   setState(() {
-                    Provider.of<SmartHome>(context, listen: false).voice =
-                        false;
+                    Provider.of<SmartHome>(context, listen: false).voice = false;
                   });
                 },
                 child: const Icon(
@@ -174,8 +172,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                     curve: Curves.easeInOut,
                   );
                   setState(() {
-                    Provider.of<SmartHome>(context, listen: false).voice =
-                        false;
+                    Provider.of<SmartHome>(context, listen: false).voice = false;
                   });
                 },
                 child: const Icon(

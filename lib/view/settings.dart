@@ -25,21 +25,10 @@ class Settings extends StatelessWidget {
           CircleAvatar(
             backgroundColor: Colors.cyan,
             radius: 100,
-            child: Container(
-              height: 200,
-              width: 200,
-              alignment: Alignment.center,
-              child: CircleAvatar(
-                backgroundImage: NetworkImage(
-                  user.photoURL!,
-                ),
-                radius: 95,
-              ),
-            ),
           ),
           const SizedBox(height: 10),
           Text(
-            user.displayName!.toString(),
+            "Olawole Oyedele",
             style: GoogleFonts.quicksand(
               textStyle: TextStyle(
                 color: Colors.grey.shade900,
@@ -49,7 +38,7 @@ class Settings extends StatelessWidget {
             ),
           ),
           Text(
-            user.email!.toString(),
+            'olawoleaeo@gmail.com',
             style: GoogleFonts.quicksand(
               textStyle: const TextStyle(
                 color: Colors.grey,
@@ -62,7 +51,7 @@ class Settings extends StatelessWidget {
           GestureDetector(
             onTap: () {
               Provider.of<SmartHome>(context, listen: false).logout();
-              Timer(const Duration(seconds: 1), (){
+              Timer(const Duration(seconds: 1), () {
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => const Login()),

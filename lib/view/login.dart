@@ -38,19 +38,17 @@ class _LoginState extends State<Login> {
                   alignment: Alignment.center,
                   currentIndicatorColor: Colors.cyan,
                   indicatorBackgroundColor: Colors.grey.shade300,
-                  padding: const EdgeInsets.fromLTRB(0, 350, 0, 0),
+                  padding: const EdgeInsets.fromLTRB(0, 500, 0, 0),
                 ),
                 slideBuilder: (index) {
-                  final sliderImage =
-                      Provider.of<SmartHome>(context, listen: false)
-                          .sliderImages[index];
+                  final sliderImage = Provider.of<SmartHome>(context, listen: false).sliderImages[index];
                   return sliderImage;
                 },
                 slideTransform: const DefaultTransform(),
                 itemCount: 3,
               ),
             ),
-            const SizedBox(height: 10),
+            const SizedBox(height: 50),
             const FaIcon(
               FontAwesomeIcons.solidLightbulb,
               color: Colors.cyan,
@@ -91,9 +89,7 @@ safely and easily""",
             const SizedBox(height: 10),
             InkWell(
               onTap: () {
-                Provider.of<SmartHome>(context, listen: false)
-                    .googleLogin()
-                    .then((credentials) {
+                Provider.of<SmartHome>(context, listen: false).googleLogin().then((credentials) {
                   if (credentials.user != null) {
                     Navigator.pushReplacement(
                       context,
